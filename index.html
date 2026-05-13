@@ -1217,6 +1217,7 @@
       const tipoCuenta = document.getElementById('tipoCuenta').value;
       const plan = document.getElementById('plan').value;
       const direccion = document.getElementById('direccion').value.trim();
+      const comentario = document.getElementById('comentario').value.trim();
       const cedulaFrontal = document.getElementById('cedulaFrontal').files[0];
       const cedulaReverso = document.getElementById('cedulaReverso').files[0];
       const aceptoTerminos = document.getElementById('aceptoTerminos').checked;
@@ -1253,7 +1254,9 @@
         `📧 Email: ${encodeURIComponent(email)}%0A` +
         `🏦 Banco: ${encodeURIComponent(banco)}%0A` +
         `💳 Tipo Cuenta: ${tipoCuenta}%0A` +
-        `🏠 Dirección: ${encodeURIComponent(direccion)}%0A%0A` +
+        `🧾 Número de Cuenta: ${numeroCuenta}%0A` +
+        `🏠 Dirección: ${encodeURIComponent(direccion)}%0A` +
+        `💬 Comentario: ${encodeURIComponent(comentario || 'Sin comentario adicional')}%0A%0A` +
         `*Información Financiera:*%0A` +
         `📊 Plan Contratado: ${plan}%0A%0A` +
         `⚠️ *Las fotos de cédula deben ser enviadas por separado o compartidas a este chat.*%0A%0A` +
