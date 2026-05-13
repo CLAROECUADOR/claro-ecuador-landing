@@ -17,6 +17,29 @@ Este proyecto es una landing page estática para la promoción de condonación y
    ```
    Por ejemplo: `http://192.168.1.10:8000`
 
+## Cómo probar el respaldo por correo
+
+1. Abre una terminal en `c:\Users\USER\Desktop\telecom-web`.
+2. Copia el archivo `.env.example` a `.env` y ajusta los valores SMTP:
+   ```powershell
+   copy .env.example .env
+   ```
+3. Instala dependencias de Node.js:
+   ```powershell
+   npm install
+   ```
+4. Inicia el servidor:
+   ```powershell
+   npm start
+   ```
+5. Abre el navegador en:
+   ```
+   http://localhost:3000
+   ```
+6. Completa el formulario y envía la solicitud.
+
+> El formulario abrirá WhatsApp con todos los datos y, al mismo tiempo, intentará enviar un respaldo automático por correo electrónico.
+
 ## Cómo compartirla públicamente
 
 ### Opción 1: GitHub Pages
